@@ -25,7 +25,7 @@ DB OSInspection 数据库巡检工具，实现对数据库一键巡检，对实�
 - -P 
 输入IP号和端口号  默认为localhost:3306
 - -m  
-模式选择all全部巡检、table只巡检表、index只巡检索引、variables只巡检重要参数、status只巡检重要状态、user只巡检用户、privileges只巡检权限
+模式选择all全部巡检、table只巡检表、index只巡检索引、variables只巡检重要参数、status只巡检重要状态、user只巡检用户、privileges只巡检权限、monitor实现数据库监控
 - -v
 输出版本号
 - -h

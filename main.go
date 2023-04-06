@@ -1,6 +1,7 @@
 package main
 
 import (
+	"DB_OSInspection/Global"
 	"DB_OSInspection/Menu"
 	"database/sql"
 	"flag"
@@ -59,12 +60,13 @@ func main() {
 	//获取用户名
 	u := flag.String("u", "root", "input username")
 	//获取密码
-	p := flag.String("p", "", "input password")
+	p := flag.String("p", "GreatSQL@2022", "input password")
 	//获取链接模式
 	nw := flag.String("nw", "tcp", "input netWork")
 	//获取地址和端口号
 	P := flag.String("P", "localhost:3306", "input port")
-	//选择模式：all全部巡检、table只巡检表、index只巡检索引、variables只巡检重要参数、status只巡检重要状态、user只巡检用户、privileges只巡检权限
+	/*选择模式：all全部巡检、table只巡检表、index只巡检索引、variables只巡检重要参数、
+	status只巡检重要状态、user只巡检用户、privileges只巡检权限、monitor新增功能*/
 	m := flag.String("m", "all", "input model")
 	//版本号
 	v := flag.Bool("v", false, "input port")
@@ -77,8 +79,9 @@ func main() {
 		return
 	}
 
-	if *h {
-		flag.Usage()
+	if *h || *u == "" {
+		fmt.Println("Usage: DB OSInspection [options]")
+		flag.PrintDefaults()
 		return
 	}
 
@@ -90,7 +93,7 @@ func main() {
 
 	conn := fmt.Sprintf("%s:%s@%s(%s)/%s", *u, *p, *nw, *P, "mysql")
 	db, err := sql.Open("mysql", conn)
-
+	Global.DB = db
 	if err != nil {
 		getErrorMessage(err)
 	}
@@ -100,13 +103,12 @@ func main() {
 		getErrorMessage(err)
 		return
 	}
-	//暂时不用设置此项
-	// //设置最大连接数
-	// db.SetMaxOpenConns(10)
-	// //最大空闲连接数
-	// db.SetMaxIdleConns(10)
-
-	Menu.Menu(db, *m)
+	//设置最大连接数
+	db.SetMaxOpenConns(10)
+	//最大空闲连接数
+	db.SetMaxIdleConns(10)
+	//跳转菜单页面
+	Menu.Menu(*m)
 
 	fmt.Println("感谢您使用数据库巡检工具 DB OSInspection")
 
