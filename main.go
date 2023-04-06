@@ -7,6 +7,8 @@ import (
 	"flag"
 	"fmt"
 	"strings"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func banner() {
