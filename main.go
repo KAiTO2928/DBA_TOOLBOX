@@ -7,8 +7,6 @@ import (
 	"flag"
 	"fmt"
 	"strings"
-
-	_ "github.com/go-sql-driver/mysql"
 )
 
 func banner() {
@@ -60,7 +58,7 @@ func main() {
 	//获取用户名
 	u := flag.String("u", "root", "input username")
 	//获取密码
-	p := flag.String("p", "GreatSQL@2022", "input password")
+	p := flag.String("p", "", "input password")
 	//获取链接模式
 	nw := flag.String("nw", "tcp", "input netWork")
 	//获取地址和端口号

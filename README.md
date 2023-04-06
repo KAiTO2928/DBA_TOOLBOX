@@ -11,11 +11,18 @@ DB OSInspection 数据库巡检工具，实现对数据库一键巡检，对实�
 一秒了解数据库
 ## 快速上手
 ```go
-./DB_OSInspection -u 用户名 -p 密码  
+Windows环境下可直接使用，不能保存巡检结果
+./DB_OSInspection -u 用户名 -p 密码
+
+#再Linux环境下保存巡检结果可以用
+ ./DB_OSInspection -u 用户名 -p 密码 >err.log
+
+#监测模式
+./DB_OSInspection -u 用户名 -p 密码 -m monitor
 ```
 即可实现全表巡检
 ### 参数解析
-所有输入后面都需要跟空格，否则会错误
+**所有输入后面都需要跟空格，否则会错误**
 - -u 
 输入用户名  默认为root
 - -p 
@@ -25,12 +32,14 @@ DB OSInspection 数据库巡检工具，实现对数据库一键巡检，对实�
 - -P 
 输入IP号和端口号  默认为localhost:3306
 - -m  
-模式选择all全部巡检、table只巡检表、index只巡检索引、variables只巡检重要参数、status只巡检重要状态、user只巡检用户、privileges只巡检权限、monitor实现数据库监控
+模式默认选择all全部巡检、table只巡检表、index只巡检索引、variables只巡检重要参数、status只巡检重要状态、user只巡检用户、privileges只巡检权限、monitor实现数据库监控
 - -v
 输出版本号
 - -h
 输出帮助
 ## 已实现功能
+### 实现数据库监控可实时输出
+-m 选择monitor 模式即可
 ### 实现表巡检
 - 大小超过10G的表
 - 索引超过6个的表

@@ -8,7 +8,6 @@ import (
 	"log"
 	"os"
 	"os/signal"
-	"runtime"
 	"strconv"
 	"strings"
 	"time"
@@ -28,9 +27,8 @@ var (
 )
 
 func DB_monitor() {
-	//此功能必须在windows环境内运行还未完善Linux平台
-	color.Redln("您现在进入的是Windows环境下MySQL数据库监测,将会实时输出对数据库的操作!")
-	if runtime.GOOS != "windows" && !isRoot() {
+	color.Redln("您现在进入的是MySQL数据库监测,将会实时输出对数据库的操作!")
+	if !isRoot() {
 		log.Fatalln("run as a user with root! Thx:)")
 	}
 	defer func() {
