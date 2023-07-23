@@ -1,4 +1,4 @@
-module DB_OSInspection
+module dba_toolbox
 
 go 1.20
 

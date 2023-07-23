@@ -1,7 +1,7 @@
-package Inspection
+package Inspection_suggestions
 
 import (
-	"DB_OSInspection/Global"
+	"dba_toolbox/Global"
 	"fmt"
 	"strconv"
 
@@ -15,7 +15,7 @@ var (
 	LightGreen = color.Style{color.Green, color.OpBold}.Render
 )
 
-func Inspection() {
+func Inspection_opinion() {
 	fmt.Println("——————————————————提醒和建议[正在开发中...]—————————————————————")
 	for k, v := range Global.Table_index_inspection_result {
 		i, _ := strconv.Atoi(v)

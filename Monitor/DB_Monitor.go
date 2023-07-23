@@ -1,8 +1,8 @@
 package Monitor
 
 import (
-	"DB_OSInspection/Global"
 	"bytes"
+	"dba_toolbox/Global"
 	"fmt"
 	"io"
 	"log"

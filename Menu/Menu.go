@@ -1,14 +1,14 @@
 package Menu
 
 import (
-	"DB_OSInspection/Index"
-	"DB_OSInspection/Inspection"
-	"DB_OSInspection/Monitor"
-	"DB_OSInspection/Privileges"
-	"DB_OSInspection/Status"
-	"DB_OSInspection/Table"
-	"DB_OSInspection/User"
-	"DB_OSInspection/Variables"
+	"dba_toolbox/Inspection_items/Index"
+	"dba_toolbox/Inspection_items/Privileges"
+	"dba_toolbox/Inspection_items/Status"
+	"dba_toolbox/Inspection_items/Table"
+	"dba_toolbox/Inspection_items/User"
+	"dba_toolbox/Inspection_items/Variables"
+	"dba_toolbox/Inspection_suggestions"
+	"dba_toolbox/Monitor"
 	"fmt"
 )
 
@@ -38,7 +38,8 @@ func Menu(m string) {
 		//权限巡检
 		Privileges.Privileges_Inspection()
 		Privileges.User_Privileges_Inspection()
-		Inspection.Inspection()
+		//巡检结果建议
+		Inspection_suggestions.Inspection_opinion()
 	case "table":
 		Table.Table_Data_Size_Inspection()
 		Table.Table_Index_Size_Inspection()

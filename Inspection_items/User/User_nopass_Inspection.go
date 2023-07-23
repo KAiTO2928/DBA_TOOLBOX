@@ -1,7 +1,7 @@
 package User
 
 import (
-	"DB_OSInspection/Global"
+	"dba_toolbox/Global"
 	"fmt"
 
 	"github.com/gookit/color"
