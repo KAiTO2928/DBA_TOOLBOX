@@ -3,10 +3,10 @@
 [![](https://img.shields.io/badge/GreatSQL-博客-brightgreen.svg)](https://greatsql.cn/home.php?mod=space&uid=10&do=blog&view=me&from=space)
 [![](https://img.shields.io/badge/License-Apache_v2.0-blue.svg)](https://gitee.com/GreatSQL/GreatSQL/blob/master/LICENSE)
 [![](https://img.shields.io/badge/release-1.2.1-blue.svg)](https://gitee.com/GreatSQL/gt-checksum/releases/tag/1.2.1)
-![输入图片说明](Menu/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230329094139.png)
-# 数据库巡检工具 DB OSInspection
+![输入图片说明](Menu\DBA_Toolbox_Logo.png)
+# 数据库巡检工具 DBA_TOOLBOX
 ## 简介：
-DB_OSInspection 数据库巡检工具，实现对数据库一秒巡检，对实例有大概了解。
+DBA_TOOLBOX 数据库巡检工具，实现对数据库一秒巡检，对实例有大概了解。
 该工具具有简单易用、高效准确等特点，非常适合运维人员和开发人员使用。
 ## 下载
 
@@ -15,13 +15,13 @@ DB_OSInspection 数据库巡检工具，实现对数据库一秒巡检，对实�
 ## 快速上手
 ```go
 Windows环境下可直接使用,不能保存巡检结果
-./DB_OSInspection -u 用户名 -p 密码
+./DBA TOOLBOX -u 用户名 -p 密码
 
 在Linux环境下保存巡检结果可以用
- ./DB_OSInspection -u 用户名 -p 密码 >err.log
+ ./DBA TOOLBOX -u 用户名 -p 密码 >err.log
 
 监测模式
-./DB_OSInspection -u 用户名 -p 密码 -m monitor
+./DBA TOOLBOX -u 用户名 -p 密码 -m monitor
 ```
 ### 参数解析
 **所有输入后面都需要跟空格，否则会错误**
