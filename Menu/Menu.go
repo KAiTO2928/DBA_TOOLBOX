@@ -66,6 +66,6 @@ func Menu(m string) {
 		Monitor.DB_monitor()
 
 	default:
-		fmt.Println("你未选择模式")
+		fmt.Println("You have not selected a mode")
 	}
 }
