@@ -3,7 +3,7 @@
 [![](https://img.shields.io/badge/GreatSQL-博客-brightgreen.svg)](https://greatsql.cn/home.php?mod=space&uid=10&do=blog&view=me&from=space)
 [![](https://img.shields.io/badge/License-Apache_v2.0-blue.svg)](https://gitee.com/GreatSQL/GreatSQL/blob/master/LICENSE)
 [![](https://img.shields.io/badge/release-1.2.1-blue.svg)](https://gitee.com/GreatSQL/gt-checksum/releases/tag/1.2.1)
-![输入图片说明](dba_toolbox/Menu/DBA_Toolbox_Logo.png )
+![输入图片说明](Menu/DBA_Toolbox_Logo.png)
 # DBA工具箱 DBA_TOOLBOX
 ## 简介：
 这款软件是一个全面的数据库管理工具，旨在帮助DBA更轻松地管理和维护数据库。它提供了各种功能，包括数据库监控、性能优化、备份和恢复、安全管理、查询分析等等。此外，它还支持多种数据库平台，如MySQL、Oracle、SQL Server等。无论您是初学者还是经验丰富的DBA，这个工具箱都将成为您工作中不可或缺的助手。
