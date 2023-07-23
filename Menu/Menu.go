@@ -2,12 +2,12 @@ package Menu
 
 import (
 	"dba_toolbox/Inspection_items/Index"
+	"dba_toolbox/Inspection_items/Inspection_suggestions"
 	"dba_toolbox/Inspection_items/Privileges"
 	"dba_toolbox/Inspection_items/Status"
 	"dba_toolbox/Inspection_items/Table"
 	"dba_toolbox/Inspection_items/User"
 	"dba_toolbox/Inspection_items/Variables"
-	"dba_toolbox/Inspection_suggestions"
 	"dba_toolbox/Monitor"
 	"fmt"
 )
