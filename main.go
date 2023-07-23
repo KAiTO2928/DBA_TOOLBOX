@@ -75,12 +75,12 @@ func main() {
 
 	flag.Parse()
 	if *v {
-		fmt.Println("DB OSInspection V1.0")
+		fmt.Println("DBA_TOOLBOX V2.0")
 		return
 	}
 
 	if *h || *u == "" {
-		fmt.Println("Usage: DB OSInspection [options]")
+		fmt.Println("Usage: DBA_TOOLBOX [options]")
 		flag.PrintDefaults()
 		return
 	}
@@ -88,7 +88,7 @@ func main() {
 	//调用banner
 	banner()
 	// 32 设置绿色，使用 33 设置黄色，使用 34 设置蓝色
-	fmt.Printf("\033[31m%s\033[0m", "欢迎使用数据库巡检工具 DB OSInspection V1.0\n")
+	fmt.Printf("\033[31m%s\033[0m", "欢迎使用 DBA_TOOLBOX V2.0\n")
 	fmt.Printf("————————————————————————————————————————————————————————\n")
 
 	conn := fmt.Sprintf("%s:%s@%s(%s)/%s", *u, *p, *nw, *P, "mysql")
@@ -110,6 +110,6 @@ func main() {
 	//跳转菜单页面
 	Menu.Menu(*m)
 
-	fmt.Println("感谢您使用数据库巡检工具 DB OSInspection")
+	fmt.Println("Enjoy DBA_TOOLBOX :)")
 
 }

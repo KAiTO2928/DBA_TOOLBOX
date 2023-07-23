@@ -20,7 +20,8 @@ var (
 	Completed = color.S256(255, 27)
 )
 
-var user_usera_slice = make([]string, 0, 30)
+var user_username_slice = make([]string, 0, 30)
+var user_userhost_slice = make([]string, 0, 30)
 
 func Privileges_Inspection() {
 	sqlStr := "select user,host from mysql.user where user not in ('mysql.session','mysql.sys','mysql.infoschema');"
@@ -34,8 +35,8 @@ func Privileges_Inspection() {
 	for counts.Next() {
 		var user User
 		err := counts.Scan(&user.TABLE_SCHEMA, &user.TABLE_NAME)
-		user_usera_slice = append(user_usera_slice, user.TABLE_SCHEMA)
-
+		user_username_slice = append(user_username_slice, user.TABLE_SCHEMA)
+		user_userhost_slice = append(user_userhost_slice, user.TABLE_NAME)
 		if err != nil {
 			panic(err.Error())
 		}
@@ -47,9 +48,10 @@ func Privileges_Inspection() {
 
 func User_Privileges_Inspection() {
 	var user User
-	for j := 0; j < len(user_usera_slice); j++ {
-		values := user_usera_slice[j]
-		sqlStr := "show grants for" + "'" + values + "'"
+	for j := 0; j < len(user_username_slice); j++ {
+		userName := user_username_slice[j]
+		userHost := user_userhost_slice[j]
+		sqlStr := "show grants for" + "'" + userName + "'@'" + userHost + "'"
 		err := Global.DB.QueryRow(sqlStr).Scan(&user.TABLE_SCHEMA)
 		if err != nil {
 			fmt.Printf("scan failed, err:%v\n", err)
