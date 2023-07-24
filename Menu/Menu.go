@@ -1,6 +1,7 @@
 package Menu
 
 import (
+	"dba_toolbox/Backup_module"
 	"dba_toolbox/Inspection_items/Index"
 	"dba_toolbox/Inspection_items/Inspection_suggestions"
 	"dba_toolbox/Inspection_items/Privileges"
@@ -64,7 +65,8 @@ func Menu(m string) {
 		Privileges.User_Privileges_Inspection()
 	case "monitor":
 		Monitor.DB_monitor()
-
+	case "Backup":
+		Backup_module.Backup()
 	default:
 		fmt.Println("You have not selected a mode")
 	}
